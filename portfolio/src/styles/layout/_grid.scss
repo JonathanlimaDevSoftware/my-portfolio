@@ -3,9 +3,11 @@
 
 .intro {
   padding: 1rem;
+  min-height: 80vh;
   display: grid;
   align-items: center;
-  gap: clamp(16px, 4vw, 40px); // Ajusta dinamicamente o espaçamento
+  justify-content: center;
+  gap: clamp(16px, 4vw, 40px);
   grid-template-columns: 1fr 400px;
   grid-template-areas:
     "intro-text profile-img"
@@ -14,17 +16,6 @@
   .intro-text {
     grid-area: intro-text;
     max-width: 600px;
-
-    p {
-      margin-bottom: 20px;
-      line-height: 1.6; // Melhor leitura
-    }
-  }
-
-  .profile-img {
-    grid-area: profile-img;
-    justify-self: center;
-    max-width: 100%;
   }
 
   .div-button {
@@ -39,6 +30,13 @@
     justify-self: center;
     display: flex;
     gap: 20px;
+  }
+}
+
+
+.form-container{
+  .social-icons{
+    display: none;
   }
 }
 
@@ -77,6 +75,30 @@
       justify-content: center;
     }
   }
+
+
+
+
+.contact {
+  flex-direction: column;
+  .social-icons{
+    display: flex;
+  }
+ 
+}
+
+.background-img {
+  display: none;
+
+  &::before {
+    background: rgba(0, 0, 0, 0.7); /* Altere a opacidade para o nível de escurecimento desejado */
+    }
+
+}
+
+
+
+
 }
 
 /* Responsividade para telas menores */
@@ -88,6 +110,16 @@
   }
 
 }
+
+@media screen and (min-width: 270px) and (max-width:830px) {
+  .project-card {
+    grid-template-columns: repeat(1 , minmax(100px, 550px));
+    gap: 5%;
+
+  }
+  
+}
+
 
 /* Dispositivos médios (769px - 939px) */
 @media screen and (min-width: 769px) and (max-width: 939px) {

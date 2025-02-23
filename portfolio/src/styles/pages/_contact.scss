@@ -1,0 +1,57 @@
+@use '../base/variables' as *;
+
+.contact {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+}
+
+.background-img {
+  
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  height: 580px;
+  border-radius: 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Altere a opacidade para o nível de escurecimento desejado */
+    border-radius: 20px;
+    z-index: 1; /* Certifique-se de que o overlay fique acima da imagem de fundo */
+  }
+  .contact__paragraph{
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 60%;
+    position: relative;
+    z-index: 3;
+    color: $text-color;
+  }
+  .social-icons{
+    position: relative;
+    z-index: 3;
+  }
+
+  .contact__text{
+    position: relative;
+    z-index: 3;
+  }
+
+}
+

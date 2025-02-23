@@ -1,34 +1,40 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { motion } from "framer-motion";
+import Form from "../components/form/Form";
+import SocialIcons from "../components/social-icons/SocialIcons";
+import img8k from '../assets/img/img8k.jpg'; // Importando a imagem diretamente
 
-const schema = yup.object({
-  nome: yup.string().required("Nome obrigatório"),
-  email: yup.string().email("E-mail inválido").required("E-mail obrigatório"),
-  mensagem: yup.string().required("Mensagem obrigatória"),
-});
-
-const Contato = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
-
-  const enviarFormulario = (data: any) => {
-    console.log(data);
+const Contact = () => {
+  // Estilo para a imagem de fundo
+  const backgroundStyle: React.CSSProperties = {
+    backgroundImage: `url(${img8k})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '580px',
+    borderRadius: '20px',
   };
 
   return (
-    <form onSubmit={handleSubmit(enviarFormulario)}>
-      <input type="text" placeholder="Nome" {...register("nome")} />
-      <p>{errors.nome?.message}</p>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <section className="contact">
+        
+        <Form/>
+        
+        <section className="background-img" style={backgroundStyle}>
 
-      <input type="email" placeholder="E-mail" {...register("email")} />
-      <p>{errors.email?.message}</p>
+          <div className="contact__text">
+            <p className="contact__paragraph ">Tem alguma dúvida ou gostaria de conversar? Fique à vontade para me enviar uma mensagem!</p>
+          </div>
 
-      <textarea placeholder="Mensagem" {...register("mensagem")}></textarea>
-      <p>{errors.mensagem?.message}</p>
+          <SocialIcons githubUrl="" linkedinUrl="" whatsappUrl="" gmailUrl=""/>
+        </section>
 
-      <button type="submit">Enviar</button>
-    </form>
+      </section>
+    </motion.div>
   );
 };
 
-export default Contato;
+export default Contact;

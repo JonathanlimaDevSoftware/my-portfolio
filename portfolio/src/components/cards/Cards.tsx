@@ -1,36 +1,36 @@
-import BtnLink from "../button/BtnLinks"
+import React from "react";
+import BtnLink from "../button/BtnLinks";
+import { faPager, faBuilding } from "@fortawesome/free-solid-svg-icons";
 
-export const Cards = ()=>{
-  return(
-    <section>
-      <h2>Cards</h2>
-
-
-
-
-
-      <section className="project-card">
-
-          <figure>
-            {/* img do projeto */}
-            <img className="preview" src="" alt="foto do projeto" />
-
-            <figcaption>
-              <h2 className="name-project">API RestFull React Pokemon</h2>
-              <p className="desctiption-project">
-                Esse código permite buscar usuários aleatórios usando a API randomuser.me.
-              </p>
-
-              <BtnLink/> <BtnLink/>
-
-            </figcaption>
-          </figure>
+interface TextProps {
+  img_url?: string;
+  alt?: string
+  title?: string;
+  paragraph?: string;
+}
 
 
 
-      </section>
 
+export const Cards: React.FC<TextProps> = ({ img_url, title, paragraph, alt }) => {
+  return (
+    <figure className="card">
+      {/* Imagem do projeto */}
+      <img className="preview-img" src={img_url} alt={alt} />
 
-    </section>
-  )
-  }
+      <figcaption className="card__text">
+        <h2 className="name-project">{title}</h2>
+        <p className="description-project">{paragraph}</p>
+      </figcaption>
+
+      <div className="btn-container">
+        <BtnLink href="#" className="btn-card" icon={faPager}>
+          Preview
+        </BtnLink>
+        <BtnLink href="#" className="btn-card" icon={faBuilding}>
+          Done
+        </BtnLink>
+      </div>
+    </figure>
+  );
+};

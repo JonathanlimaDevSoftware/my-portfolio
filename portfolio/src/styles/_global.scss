@@ -2,9 +2,24 @@
 @use './base/typograph';
 @use './base/states';
 
+
+@use './pages/home';
+@use './pages/project';
+@use './pages/about';
+@use './pages/contact';
+
+
+
+
 @use './components/navbar';
-@use './components/home';
 @use './components/footer';
+@use './components/card';
+@use './components/form';
+
+
+
+
+
 
 @use './layout/grid';
 

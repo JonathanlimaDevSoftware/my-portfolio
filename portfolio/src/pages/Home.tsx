@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { faPersonDigging } from "@fortawesome/free-solid-svg-icons"
 import Avatar from '../assets/img/profile04.jpeg';
 import DownloadButton from "../components/button/BtnFileDownlod";
 import ProfileImage from "../components/imagem/Img";
@@ -29,7 +30,7 @@ const Home = () => {
           
           <div className="div-button">
             <DownloadButton fileName={"programador-currículo"} filePath={"../assets/img/profile04.jpeg"}/>
-            <BtnLink href="/projetos" icon={"faPersonDigging"}>
+            <BtnLink href="/projetos" icon={faPersonDigging}>
               Projetos
             </BtnLink>
           </div>

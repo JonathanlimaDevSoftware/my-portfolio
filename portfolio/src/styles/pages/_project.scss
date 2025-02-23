@@ -1,0 +1,27 @@
+.projects{
+  min-height: 80vh;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  justify-items: center;
+  gap: 30px;
+
+}
+
+
+@media screen and (min-width:200px) and (max-width:610px) {
+  .projects{
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    
+   
+  }
+  
+}
+
+@media screen and (min-width:611px) and (max-width:910px) {
+  .projects{
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  
+  }
+  
+}

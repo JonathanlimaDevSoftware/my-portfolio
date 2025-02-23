@@ -13,8 +13,8 @@
 
 /* 2. Definindo a fonte padrão para o body */
 body {
+  
   line-height: 1.5;
-  background-color: #fff; /* Cor de fundo padrão */
   color: #333; /* Cor do texto */
   -webkit-font-smoothing: antialiased; /* Melhora a renderização de fontes no Chrome */
   -moz-osx-font-smoothing: grayscale; /* Melhora a renderização de fontes no Firefox no Mac */
@@ -22,7 +22,7 @@ body {
 
 /* 3. Removendo os estilos dos links */
 a {
- 
+
   color: inherit; /* Faz os links herdar a cor do texto */
 }
 
