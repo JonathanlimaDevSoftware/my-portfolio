@@ -1,36 +1,52 @@
-@use '../base/variables';
+@use '../base/variables' as *;
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: variables.$primary-color;
+  background-color: $primary-color;
   padding: 1rem 2rem;
+  border-radius: 0 0 $border-gerais $border-gerais;
   
-  border-radius: variables.$border-gerais;
   position: sticky;
   top: 0;
+  width: 100%;
+  z-index: 1000; // Aumentado para garantir sobreposição quando necessário
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); // Adiciona um leve sombreamento
 
-
-  
   .logo {
     font-size: 1.5rem;
-    color: variables.$secondary-color;
+    color: $secondary-color;
+    font-weight: bold;
   }
 
-  ul {
+  .navbar__links {
     display: flex;
     list-style: none;
     gap: 1.5rem;
 
-    li a {
-      text-decoration: none;
-      color: variables.$text-color;
-      transition: color 0.3s ease;
+    li {
+      a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
 
-      &:hover {
-        color: variables.$secondary-color;
+        &:hover {
+          color: $secondary-color;
+        }
       }
+    }
+  }
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+
+    .navbar__links {
+      display: none; // Esconde os links para ser ativado via menu hambúrguer
     }
   }
 }

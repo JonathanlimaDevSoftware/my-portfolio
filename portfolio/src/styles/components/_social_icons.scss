@@ -1,0 +1,21 @@
+@use '../base/variables' as *;
+
+/* Estilos para os ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  .icon {
+    color: $secondary-color;
+    font-size: 1.5rem; // Garante tamanho consistente
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .icon:hover,
+  .icon:focus { 
+    transform: scale(1.2);
+    color: lighten($secondary-color, 10%);
+  }
+}

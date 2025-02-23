@@ -1,9 +1,15 @@
-@use '../base/variables';
+@use '../base/variables' as *;
 
 .footer {
   text-align: center;
-  border-radius: variables.$border-gerais;
-  padding: 1rem;
-  background-color: variables.$primary-color; // Use o prefixo do módulo
-  color: variables.$text-color;
+  border-radius: $border-gerais $border-gerais 0 0;
+  padding: 1.5em 0;
+  background-color: $primary-color;
+  color: $text-color;
+  font-size: 1rem;
+  opacity: 0.9; // Suaviza a aparência do texto
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0; // Ajusta o espaçamento para telas menores
+  }
 }

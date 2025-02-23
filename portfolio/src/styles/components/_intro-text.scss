@@ -1,0 +1,31 @@
+@use '../base/variables' as *;
+
+.intro-text {
+  color: $text-color;
+
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+  }
+
+  p {
+    word-spacing: 3px;
+    line-height: 1.6; // Melhora a leitura
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.text-detail {
+  color: $secondary-color;
+  font-weight: 600; // Melhor contraste
+}

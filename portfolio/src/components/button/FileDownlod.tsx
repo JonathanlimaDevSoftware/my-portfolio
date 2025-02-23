@@ -1,6 +1,6 @@
 // DownloadButton.tsx
 import React from 'react';
-
+import '../../styles/components/_btn.scss';
 interface DownloadButtonProps {
   fileName: string;
   filePath: string;
@@ -15,10 +15,13 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ fileName, filePath }) =
   };
 
   return (
-    <button onClick={handleDownload} className="download-button">
-      Baixar Currículo
+    <button onClick={handleDownload} className="btn download-button">
+      Download CV
     </button>
   );
 };
 
 export default DownloadButton;
+
+
+

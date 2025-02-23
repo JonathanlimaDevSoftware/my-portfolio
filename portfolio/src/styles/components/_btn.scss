@@ -1,0 +1,26 @@
+@use '../base/variables' as *;
+
+.btn {
+  color: $secondary-color;
+  background-color: $background-color;
+  border-radius: $border-gerais;
+  border: 2px solid $primary-color;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &.btn-menu {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

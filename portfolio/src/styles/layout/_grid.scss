@@ -1,0 +1,79 @@
+@use '../base/variables' as *;
+
+.navbar {
+  .navbar__links {
+    display: none;
+  }
+}
+
+.intro {
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  gap: clamp(16px, 4vw, 40px); // Ajusta dinamicamente o espaçamento
+  grid-template-columns: 1fr 400px;
+  grid-template-areas:
+    "intro-text profile-img"
+    "div-button social-icons";
+
+  .intro-text {
+    grid-area: intro-text;
+    max-width: 600px;
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6; // Melhor leitura
+    }
+  }
+
+  .profile-img {
+    grid-area: profile-img;
+    justify-self: center;
+    max-width: 100%;
+  }
+
+  .div-button {
+    grid-area: div-button;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .social-icons {
+    grid-area: social-icons;
+    justify-self: center;
+    display: flex;
+    gap: 20px;
+  }
+}
+
+/* =================== Media Queries =================== */
+
+/* Dispositivos pequenos (até 768px) */
+@media screen and (max-width: 768px) {
+  .intro {
+    padding: 3rem 1rem;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    grid-template-areas:
+      "profile-img"
+      "intro-text"
+      "div-button"
+      "social-icons";
+
+    .intro-text {
+      text-align: center;
+    }
+    
+    .div-button {
+      justify-content: center;
+    }
+  }
+}
+
+/* Dispositivos médios (769px - 939px) */
+@media screen and (min-width: 769px) and (max-width: 939px) {
+  .intro {
+    grid-template-columns: 1fr 300px;
+  }
+}
