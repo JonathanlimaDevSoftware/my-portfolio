@@ -1,0 +1,25 @@
+@use './variables' as *;
+
+// _navbar.scss
+
+.isActive{
+  color: $secondary-color;
+
+}
+
+
+
+
+.navbar {
+  .navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+    li {
+      a.isActive {
+        color: $secondary-color;
+      }
+    }
+  }
+}

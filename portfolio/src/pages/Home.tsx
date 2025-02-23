@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Avatar from '../assets/img/profile04.jpeg';
-import DownloadButton from "../components/button/FileDownlod";
+import DownloadButton from "../components/button/BtnFileDownlod";
 import ProfileImage from "../components/imagem/Img";
 import SocialIcons from "../components/social-icons/SocialIcons";
 import BtnLink from "../components/button/BtnLinks";

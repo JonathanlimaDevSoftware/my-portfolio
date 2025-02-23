@@ -1,0 +1,6 @@
+@mixin blur($background: rgba(2, 12, 27, 0.4), $border-gerais: 10px) {
+  background-color: $background; /* Usando o parâmetro de fundo */
+  border-radius: $border-gerais; /* Usando o parâmetro de borda */
+  backdrop-filter: blur(10px); /* Aplica o efeito de borrão */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+}

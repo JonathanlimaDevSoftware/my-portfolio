@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Cards } from "../components/cards/Cards";
 
 const Projetos = () => {
   return (
@@ -7,7 +8,11 @@ const Projetos = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <h1>Bem-vindo ao meu projetos!</h1>
+      
+      
+      <Cards></Cards>
+
+
     </motion.div>
   );
 };

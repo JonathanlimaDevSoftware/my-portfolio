@@ -1,4 +1,5 @@
 @use '../base/variables' as *;
+@use '../base/mixins' as *;
 
 .navbar {
   display: flex;
@@ -38,15 +39,33 @@
       }
     }
   }
-}
 
-/* Responsividade para telas menores */
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
 
-    .navbar__links {
-      display: none; // Esconde os links para ser ativado via menu hambúrguer
+  .menu{
+    &.open{
+      height: 70vh;
     }
+    a{font-size: 1.5rem;}
+    .navbar__links{
+      padding-top: 3em;
+      display: flex; /* dispçay flex no _grid.scss */
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    width: 100%;
+    height: 0vh;
+    left: 0;
+    top: 78px;
+    overflow: hidden;
+    position: absolute;
+    transition: height 2s;
+    @include blur;
+  
+    
+
+  
   }
+
 }
+
